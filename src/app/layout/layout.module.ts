@@ -6,12 +6,14 @@ import { AppRoutingModule } from '../app-routing.module';
 import { MatIconModule } from '@angular/material/icon';
 
 import { MenuComponent } from './menu/menu.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
 @NgModule({
   declarations: [
-    MenuComponent
+    MenuComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { MenuComponent } from './menu/menu.component';
     MatIconModule
   ],
   exports: [
-    MenuComponent
+    MenuComponent,
+    FooterComponent
   ]
 })
 export class LayoutModule { }
