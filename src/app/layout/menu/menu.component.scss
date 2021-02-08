@@ -1,5 +1,18 @@
-.navigation-list {
+mat-toolbar {
+
+
+  img {
+    width: 50px;
+  }
+
+  h2 {
+    margin-left: 10px;
+  }
+
+  .navigation-list {
     display: flex;
     width: 100%;
     justify-content: flex-end;
+  }
 }
+
