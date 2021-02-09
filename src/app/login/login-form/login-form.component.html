@@ -1,8 +1,26 @@
 <mat-card>
   <mat-card-title>Login</mat-card-title>
   <mat-card-content>
-    <form #logForm="ngForm">
-      <button mat-raised-button color="primary">Log in</button>
+    <form [formGroup]="loginForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput
+          placeholder="master8@lemoncode.net"
+          formControlName="email"
+        >
+        <mat-icon matSuffix>person</mat-icon>
+        <mat-error *ngIf="emailControl.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput
+          placeholder="12345678"
+          formControlName="password"
+          type="password"
+        >
+        <mat-icon matSuffix>lock</mat-icon>
+      </mat-form-field>
+      <button mat-raised-button color="primary" [disabled]="loginForm.invalid">Log in</button>
     </form>
   </mat-card-content>
 </mat-card>

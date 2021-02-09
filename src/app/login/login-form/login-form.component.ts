@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MemberEntity } from 'src/app/model/member-model';
+import { FormBuilder, FormGroup, FormControl, Validators  } from "@angular/forms";
 
 @Component({
   selector: 'app-login-form',
@@ -8,16 +9,46 @@ import { MemberEntity } from 'src/app/model/member-model';
 })
 export class LoginFormComponent implements OnInit {
   member: MemberEntity;
+  loginForm: FormGroup;
+  emailControl: FormControl;
+  passwordControl: FormControl;
 
-  constructor() {
+  constructor(private fb: FormBuilder) {
 
     this.member = {
       login: '',
       password: '',
       role: ''
     }
+
+    this.passwordControl = new FormControl('', [Validators.required]);
+    this.emailControl = new FormControl('', [Validators.required, Validators.email]);
+
+    this.loginForm = this.fb.group({
+      email: this.emailControl,
+      password: this.passwordControl,
+    });
   }
 
   ngOnInit(): void {
   }
+
+  getErrorMessage() {
+    if (this.emailControl.hasError('required')) {
+      return 'You must enter a value'
+    }
+
+    return this.emailControl.hasError('email') ? 'Not a valid email' : '';
+  }
+
+  // TODO: Cambiar este metodo para que lo que está en el constructor funcione aquí
+  // createEditForm() {
+  //   this.editForm = this.fb.group({
+  //     email: ['', Validators.required, Validators.email],
+  //     password: ['', Validators.required]
+  //   });
+
+  //   this.emailControl = this.editForm.get('email') as FormControl;
+  //   this.passwordControl = this.editForm.get('password') as FormControl;
+  // }
 }
