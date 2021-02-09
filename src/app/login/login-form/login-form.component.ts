@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MemberEntity } from 'src/app/model/member-model';
 import { FormBuilder, FormGroup, FormControl, Validators  } from "@angular/forms";
 
 @Component({
@@ -8,19 +7,11 @@ import { FormBuilder, FormGroup, FormControl, Validators  } from "@angular/forms
   styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent implements OnInit {
-  member: MemberEntity;
   loginForm: FormGroup;
   emailControl: FormControl;
   passwordControl: FormControl;
 
   constructor(private fb: FormBuilder) {
-
-    this.member = {
-      login: '',
-      password: '',
-      role: ''
-    }
-
     this.passwordControl = new FormControl('', [Validators.required]);
     this.emailControl = new FormControl('', [Validators.required, Validators.email]);
 
@@ -41,7 +32,7 @@ export class LoginFormComponent implements OnInit {
     return this.emailControl.hasError('email') ? 'Not a valid email' : '';
   }
 
-  // TODO: Cambiar este metodo para que lo que está en el constructor funcione aquí
+  // TODO
   // createEditForm() {
   //   this.editForm = this.fb.group({
   //     email: ['', Validators.required, Validators.email],

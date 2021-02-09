@@ -1,5 +1,4 @@
 export interface MemberEntity {
-  login: string;
+  email: string;
   password: string;
-  role: string;
 }
