@@ -1,34 +1,46 @@
 import { Injectable } from '@angular/core';
-import { MemberEntity } from "../model/member-model";
+import { MemberEntity } from '../model/member-model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
+  logged: boolean = false
+  
+  member: MemberEntity = {
+    email : '',
+    password: ''
+  }
 
-  adminMember: MemberEntity
+  constructor() { }
 
-  constructor() {
-    this.adminMember = {
-      email: 'master8@lemoncode.net',
-      password: '12345678'
+  login({email, password}: MemberEntity): boolean {
+    const logginMember: MemberEntity = { email, password }
+
+    if (email === 'master8@lemoncode.net' && password === '12345678') {
+     this.logged = true;
+     this.member = {...logginMember}
+      return true
+    }
+
+    return false;
+  }
+
+  logout(): void {
+    if (this.logged) {
+      this.logged = false
+      this.member = {
+        email: '',
+        password: ''
+      }
     }
   }
 
-  // TODO:
-  // login(): boolean {
-  //   return true
-  // }
+  isLogged(): boolean {
+    return this.logged
+  }
 
-  // logout(): void {
-
-  // }
-
-  // isLogged(): boolean {
-  //   return true
-  // }
-
-  // getUsername(): string {
-  //   return ''
-  // }
+  getUsername(): string {
+    return this.member.email
+  }
 }
