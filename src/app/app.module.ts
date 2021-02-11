@@ -6,6 +6,7 @@ import { LayoutModule } from './layout/layout.module';
 import { LoginModule } from './login/login.module';
 
 import { AppComponent } from './app.component';
+import { GalleryModule } from './gallery/gallery.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     LayoutModule,
-    LoginModule
+    LoginModule,
+    GalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,4 +2,4 @@
 <a mat-button routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
 <a mat-button routerLink="/gallery" routerLinkActive="active">Gallery</a>
 <a mat-button routerLink="/profile" routerLinkActive="active"><mat-icon>person</mat-icon>{{username}}</a>
-<a mat-button routerLink="/" routerLinkActive="active" *ngIf="isLogged"><mat-icon>cancel</mat-icon>Logout</a>
+<a mat-button routerLink="/" routerLinkActive="active" *ngIf="isLogged" (click)="handleLogout()"><mat-icon>cancel</mat-icon>Logout</a>

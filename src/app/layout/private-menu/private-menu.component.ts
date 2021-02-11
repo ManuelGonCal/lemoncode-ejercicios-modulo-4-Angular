@@ -18,4 +18,7 @@ export class PrivateMenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  handleLogout() {
+    this.userService.logout();
+  }
 }
