@@ -1,0 +1,10 @@
+<nav>
+  <mat-toolbar color="primary">
+      <img src="../../../assets/alien-logo.png" alt="">
+      <h2>Angular</h2>
+      <ul class="navigation-list">
+        <app-menu></app-menu>
+        <app-private-menu *ngIf="togglePrivateMenu()"></app-private-menu>
+      </ul>
+  </mat-toolbar>
+</nav>

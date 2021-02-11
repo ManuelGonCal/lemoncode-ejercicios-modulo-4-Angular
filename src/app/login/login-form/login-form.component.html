@@ -20,7 +20,7 @@
         >
         <mat-icon matSuffix>lock</mat-icon>
       </mat-form-field>
-      <button mat-raised-button color="primary" [disabled]="loginForm.invalid" (click)="logIn()">Log in</button>
+      <button mat-raised-button color="primary" [disabled]="loginForm.invalid" (click)="submitForm($event)">Log in</button>
     </form>
   </mat-card-content>
 </mat-card>

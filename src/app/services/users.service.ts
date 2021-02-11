@@ -5,21 +5,27 @@ import { MemberEntity } from '../model/member-model';
   providedIn: 'root'
 })
 export class UsersService {
-  logged: boolean = false
-  
-  member: MemberEntity = {
-    email : '',
-    password: ''
-  }
+  logged: boolean;
 
-  constructor() { }
+  member: MemberEntity
+
+  constructor() {
+    this.logged = localStorage.getItem('user') !== null;
+
+    this.member = {
+      email : '',
+      password: ''
+    }
+  }
 
   login({email, password}: MemberEntity): boolean {
     const logginMember: MemberEntity = { email, password }
 
-    if (email === 'master8@lemoncode.net' && password === '12345678') {
-     this.logged = true;
-     this.member = {...logginMember}
+    if (logginMember.email === 'master8@lemoncode.net' && logginMember.password === '12345678') {
+      localStorage.setItem('user', logginMember.email);
+
+      this.logged = true;
+      this.member = {...logginMember}
       return true
     }
 
@@ -28,6 +34,8 @@ export class UsersService {
 
   logout(): void {
     if (this.logged) {
+      localStorage.removeItem('user');
+
       this.logged = false
       this.member = {
         email: '',
@@ -41,6 +49,6 @@ export class UsersService {
   }
 
   getUsername(): string {
-    return this.member.email
+    return this.member.email ?? ''
   }
 }

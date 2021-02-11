@@ -35,14 +35,16 @@ export class LoginFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  logIn() {
+  submitForm(evt: Event) {
+    evt.preventDefault();
+
     this.member = {
       email: this.loginForm.value.email,
       password: this.loginForm.value.password
     };
 
     if (this.userService.login(this.member)) {
-      this.router.navigateByUrl('/');
+      this.router.navigateByUrl('/dashboard');
     } else {
       alert('user: master8@lemoncode.net || password: 12345678')
     }
@@ -56,7 +58,7 @@ export class LoginFormComponent implements OnInit {
     return this.emailControl.hasError('email') ? 'Not a valid email' : '';
   }
 
-  
+
 
   // TODO
   // createEditForm() {

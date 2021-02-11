@@ -7,13 +7,17 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { PrivateMenuComponent } from './private-menu/private-menu.component';
 
 
 
 @NgModule({
   declarations: [
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderComponent,
+    PrivateMenuComponent
   ],
   imports: [
     CommonModule,
@@ -23,8 +27,10 @@ import { FooterComponent } from './footer/footer.component';
     MatIconModule
   ],
   exports: [
+    HeaderComponent,
+    PrivateMenuComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
   ]
 })
 export class LayoutModule { }
