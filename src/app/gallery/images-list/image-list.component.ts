@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { galleryImageEntity } from 'src/app/model/image-model';
+import { GalleryService } from 'src/app/services/gallery.service';
 
 @Component({
   selector: 'app-image-list',
@@ -6,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./image-list.component.scss']
 })
 export class ImageListComponent implements OnInit {
+  imagesList : galleryImageEntity[]
 
-  constructor() { }
+  constructor(private galleryService: GalleryService) {
+    this.imagesList = [...this.galleryService.galleryImages];
+  }
 
   ngOnInit(): void {
   }

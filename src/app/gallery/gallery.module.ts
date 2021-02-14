@@ -5,6 +5,8 @@ import { GalleryWrapperComponent } from './gallery-wrapper/gallery-wrapper.compo
 import { ImageListComponent } from './images-list/image-list.component';
 import { GalleryActionsComponent } from './gallery-actions/gallery-actions.component';
 import { ImageSelectedComponent } from './image-selected/image-selected.component';
+import { MatIconModule } from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 
 
 
@@ -17,7 +19,9 @@ import { ImageSelectedComponent } from './image-selected/image-selected.componen
     ImageSelectedComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatIconModule,
+    MatButtonModule
   ],
   exports: [
     GalleryPageComponent,

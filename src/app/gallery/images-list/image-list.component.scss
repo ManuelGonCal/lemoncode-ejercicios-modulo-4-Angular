@@ -1,0 +1,18 @@
+.images-list {
+  margin-top: 20px;
+  display: flex;
+
+  .image-wrapper {
+    text-align: center;
+
+    img {
+      max-width: 90%;
+    }
+  }
+
+  .image-selected {
+    img {
+      border: 2px solid blue;
+    }
+  }
+}

@@ -17,8 +17,8 @@ export class GalleryService {
       {id: 5, src:'img5.png',title:'Neo Tokyo Explosion'},
       {id: 6, src:'img6.png',title:'Saitama normal punch'},
       {id: 7, src:'img7.jpg',title:'Astronaut psychedelia'},
-      {id: 8, src:'img7.png',title:'Akira'},
-    ] 
+      {id: 8, src:'img8.png',title:'Akira'},
+    ]
   }
 
   getImages(): galleryImageEntity[] {

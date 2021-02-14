@@ -1,1 +1,5 @@
-<p>images-list works!</p>
+<div class="images-list">
+  <div class="image-wrapper" *ngFor="let image of imagesList">
+    <img src="../../../assets/gallery/{{image.src}}" alt="{{image.title}}">
+  </div>
+</div>
