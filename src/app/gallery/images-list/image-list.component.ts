@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, ElementRef } from '@angular/core';
 import { galleryImageEntity } from 'src/app/model/image-model';
 import { GalleryService } from 'src/app/services/gallery.service';
 
@@ -8,13 +8,20 @@ import { GalleryService } from 'src/app/services/gallery.service';
   styleUrls: ['./image-list.component.scss']
 })
 export class ImageListComponent implements OnInit {
-  imagesList : galleryImageEntity[]
+  @Input()
+  images: galleryImageEntity[]
 
-  constructor(private galleryService: GalleryService) {
-    this.imagesList = [...this.galleryService.galleryImages];
+  @Output()
+  handleClick: EventEmitter<HTMLImageElement> = new EventEmitter();
+
+  constructor() { 
+    this.images = [];
   }
 
   ngOnInit(): void {
   }
 
+  onImageClick(value: HTMLImageElement) {
+    this.handleClick.emit(value)
+  }
 }

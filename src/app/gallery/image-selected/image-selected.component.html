@@ -1,4 +1,6 @@
-<h2>Imagen Titulo</h2>
-<div class="img-container">
-    <img src="../../../assets/gallery/img1.jpg">
-</div>
+<ng-container *ngIf="actualImage !== null">
+    <h2>{{ actualImage?.title }}</h2>
+    <div class="img-container">
+        <img src="{{ actualImage?.src }}" alt="{{ actualImage?.title }}">
+    </div>
+</ng-container>

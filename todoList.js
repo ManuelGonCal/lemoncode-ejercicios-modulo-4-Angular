@@ -3,6 +3,8 @@
   // ? 18:users.service.ts: Crear meotodos del servicio de login
   // ? Estamos con el handleLogOut en private menu para handlear la salida del usuario
 
+  // ! ESTAMOS CON EL CLICK en la lista movida chunga, mirate lo del index en el ngFor que es con lo que no estamos dando 
+
 
   /* Galeria 
   
