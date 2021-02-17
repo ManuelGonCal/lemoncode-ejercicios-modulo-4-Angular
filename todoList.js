@@ -1,13 +1,10 @@
 // TODO LIST
-  // ! 35:login-form.component.ts: Cambiar estructura en el constructor para añadir la inicialización a un metodo aparte
-  // ? 18:users.service.ts: Crear meotodos del servicio de login
-  // ? Estamos con el handleLogOut en private menu para handlear la salida del usuario
-
-  // ! ESTAMOS CON EL CLICK en la lista movida chunga, mirate lo del index en el ngFor que es con lo que no estamos dando 
+  // ! ESTAMOS CON EL CLICK en la lista movida chunga, mirate lo del index en el ngFor que es con lo que no estamos dando
+  // ? Enviar el indice actual
 
 
-  /* Galeria 
-  
+  /* Galeria
+
   En este ejercicio se practica:
 
 Binding
@@ -40,8 +37,8 @@ Botonera: Una parte con una botonera con 6 botones: anterior, siguiente, aumenta
 Crea la estructura HTML para mostrar esas 3 partes/bloques en la pantalla
 
 Programa la galería, las funcionalidades son las siguientes:
-Al empezar, se mostrará una de las imágenes en la parte de Imagen seleccionada.
-Al hacer click en una imagen de la lista, la imagen correspondiente se mostrará en la parte de imagen seleccionada.
+// ? Al empezar, se mostrará una de las imágenes en la parte de Imagen seleccionada.
+// ? Al hacer click en una imagen de la lista, la imagen correspondiente se mostrará en la parte de imagen seleccionada.
 Al hacer click en el botón siguiente, se cambiará la imagen seleccionada por la siguiente de la lista.
 Se pondrá “disabled” el botón siguiente cuando la imagen seleccionada sea la última de la lista.
 Al hacer click en el botón anterior, se cambiará la imagen seleccionada por la anterior de la lista.
@@ -54,15 +51,15 @@ El botón de Stop solamente se mostrará cuando esté en marcha el reproductor.
 El botón de Play solamente se mostrará cuando el reproductor esté detenido.
 RETOS
 
-Remarcar con estilos css la imagen de la lista que corresponda con la imagen actualmente seleccionada
+// ? Remarcar con estilos css la imagen de la lista que corresponda con la imagen actualmente seleccionada
 
 Paginar el listado de imágenes. En vez de mostrar todas las imágenes de golpe, mostrarlas de 3 en 3. Añadir un botón Anterior y otro siguiente para avanzar o retroceder de “página” en el listado.
 
 Ayuda: La pipe slice trocea un array Ejemplo: En <img *ngFor="let image of images | slice:3:6" /> la pipe slice haría return de los elementos 3, 4 y 5 del array images.
 
 slice:0:3 => Empezaría en el 0 y terminaría en el 3 pero sin incluir el 3. slice:3:6 => Empezaría en el 3 y terminaría en el 6 pero sin incluir el 6. slice:6:9 => Empezaría en el 6 y terminaría en el 9 pero sin incluir el 9.
-  
-  
-  
-  
+
+
+
+
   */

@@ -1,5 +1,5 @@
-<div class="images-list">
-  <div class="image-wrapper" *ngFor="let image of images">
-    <img src="{{image.src}}" alt="{{image.title}}" (click)="onImageClick(img)" #img>
+<div class="images-list" #imageList>
+  <div class="image-wrapper" *ngFor="let image of images; let i = index" >
+    <img src="{{image.src}}" alt="{{image.title}}" (click)="onImageClick(i, imageList)">
   </div>
 </div>

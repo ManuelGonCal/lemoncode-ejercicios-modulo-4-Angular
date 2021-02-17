@@ -10,8 +10,8 @@ export class ImageSelectedComponent implements OnInit {
   @Input()
   actualImage: galleryImageEntity
 
-  constructor() { 
-    this.actualImage = {id: 1, src: '', title: ''}
+  constructor() {
+    this.actualImage = {id: 0, src: '', title: ''}
   }
 
   ngOnInit(): void {

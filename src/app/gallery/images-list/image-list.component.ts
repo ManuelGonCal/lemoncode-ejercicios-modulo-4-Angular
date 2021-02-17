@@ -12,16 +12,20 @@ export class ImageListComponent implements OnInit {
   images: galleryImageEntity[]
 
   @Output()
-  handleClick: EventEmitter<HTMLImageElement> = new EventEmitter();
+  handleClick: EventEmitter<number> = new EventEmitter();
 
-  constructor() { 
+  constructor() {
     this.images = [];
   }
 
   ngOnInit(): void {
   }
 
-  onImageClick(value: HTMLImageElement) {
-    this.handleClick.emit(value)
+  onImageClick(index: number, imageListElement: HTMLDivElement) {
+    const imagesList = Array.from(imageListElement.children);
+
+    imagesList.forEach(imageWrapper => imageWrapper.classList.remove('selected'))
+    imagesList[index].classList.add('selected');
+    this.handleClick.emit(index)
   }
 }

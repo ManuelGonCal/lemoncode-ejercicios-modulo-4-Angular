@@ -11,24 +11,16 @@ export class GalleryWrapperComponent implements OnInit {
 
   imagesList : galleryImageEntity[]
   selectedImage: galleryImageEntity;
-  newImage: galleryImageEntity;
 
   constructor(private galleryService: GalleryService) {
     this.imagesList = [...this.galleryService.getImages()];
     this.selectedImage = this.imagesList[0];
-    this.newImage = {id: 1, src:'', title: ''}
-   }
+}
 
   ngOnInit(): void {
   }
 
-  handleListClick(target: HTMLImageElement) {
-    this.newImage = {
-      src: target.src,
-      title: target.alt,
-      id: 2,
-    }
-
-    console.log(this.newImage)
+  handleListClick(target: number) {
+    this.selectedImage = this.galleryService.getByIndex(target)
   }
 }
