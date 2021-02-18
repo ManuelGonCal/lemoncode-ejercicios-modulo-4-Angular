@@ -39,10 +39,10 @@ Crea la estructura HTML para mostrar esas 3 partes/bloques en la pantalla
 Programa la galería, las funcionalidades son las siguientes:
 // ? Al empezar, se mostrará una de las imágenes en la parte de Imagen seleccionada.
 // ? Al hacer click en una imagen de la lista, la imagen correspondiente se mostrará en la parte de imagen seleccionada.
-Al hacer click en el botón siguiente, se cambiará la imagen seleccionada por la siguiente de la lista.
-Se pondrá “disabled” el botón siguiente cuando la imagen seleccionada sea la última de la lista.
-Al hacer click en el botón anterior, se cambiará la imagen seleccionada por la anterior de la lista.
-Se pondrá “disabled” el botón anterior cuando la imagen seleccionada sea la primera de la lista.
+// ? Al hacer click en el botón siguiente, se cambiará la imagen seleccionada por la siguiente de la lista.
+// ? Se pondrá “disabled” el botón siguiente cuando la imagen seleccionada sea la última de la lista.
+// ? Al hacer click en el botón anterior, se cambiará la imagen seleccionada por la anterior de la lista.
+// ? Se pondrá “disabled” el botón anterior cuando la imagen seleccionada sea la primera de la lista.
 Al hacer click en el botón Aumentar, se agrandará el tamaño de la imagen seleccionada.
 Al hacer click en el botón Disminuir, se reducirá el tamaño de la imagen seleccionada.
 Al hacer click en el botón Play, se “pondrá en marcha el reproductor”, es decir, la imagen seleccionada empezará a cambiar cada 2 segundos. Cuando el reproductor llegue a la última imagen volverá a empezar por la primera.

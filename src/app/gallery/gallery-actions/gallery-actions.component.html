@@ -1,14 +1,26 @@
 <div class="gallery-controls">
-  <button mat-fab color="primary"
-    (click)="onPreviousClick()"
+  <button
+    mat-fab
+    color="primary"
     [disabled]="isPreviousDisabled"
-  ><mat-icon>navigate_before</mat-icon></button>
-  <button mat-fab><mat-icon>zoom_in</mat-icon></button>
-  <button mat-fab><mat-icon>zoom_out</mat-icon></button>
+    (click)="onPreviousClick()"
+  >
+    <mat-icon>navigate_before</mat-icon>
+  </button>
+  <button mat-fab (click)="onZoomInClick()">
+    <mat-icon>zoom_in</mat-icon>
+  </button>
+  <button mat-fab (click)="onZoomOutClick()">
+    <mat-icon>zoom_out</mat-icon>
+  </button>
   <button mat-fab><mat-icon>pause</mat-icon></button>
   <button mat-fab><mat-icon>play_arrow</mat-icon></button>
-  <button mat-fab color="primary"
-    (click)="onNextClick()"
+  <button
+    mat-fab
+    color="primary"
     [disabled]="isNextDisabled"
-  ><mat-icon>navigate_next</mat-icon></button>
+    (click)="onNextClick()"
+  >
+    <mat-icon>navigate_next</mat-icon>
+  </button>
 </div>
