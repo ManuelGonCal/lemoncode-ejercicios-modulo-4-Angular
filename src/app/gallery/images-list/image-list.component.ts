@@ -1,6 +1,5 @@
-import { Component, Input, OnInit, Output, EventEmitter, ElementRef } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { galleryImageEntity } from 'src/app/model/image-model';
-import { GalleryService } from 'src/app/services/gallery.service';
 
 @Component({
   selector: 'app-image-list',
@@ -11,21 +10,23 @@ export class ImageListComponent implements OnInit {
   @Input()
   images: galleryImageEntity[]
 
+  @Input()
+  actualIndex: number
+
   @Output()
-  handleClick: EventEmitter<number> = new EventEmitter();
+  listClick: EventEmitter<number> = new EventEmitter();
 
   constructor() {
     this.images = [];
+    this.actualIndex = 0;
   }
 
   ngOnInit(): void {
   }
 
-  onImageClick(index: number, imageListElement: HTMLDivElement) {
-    const imagesList = Array.from(imageListElement.children);
+  onImageClick(index: number) {
+    this.actualIndex = index;
 
-    imagesList.forEach(imageWrapper => imageWrapper.classList.remove('selected'))
-    imagesList[index].classList.add('selected');
-    this.handleClick.emit(index)
+    this.listClick.emit(this.actualIndex)
   }
 }

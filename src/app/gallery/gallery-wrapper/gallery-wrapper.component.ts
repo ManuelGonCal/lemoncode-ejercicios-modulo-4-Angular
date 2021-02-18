@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { galleryImageEntity } from 'src/app/model/image-model';
 import { GalleryService } from 'src/app/services/gallery.service';
 
@@ -11,16 +11,24 @@ export class GalleryWrapperComponent implements OnInit {
 
   imagesList : galleryImageEntity[]
   selectedImage: galleryImageEntity;
+  actualPosition: number;
 
   constructor(private galleryService: GalleryService) {
     this.imagesList = [...this.galleryService.getImages()];
     this.selectedImage = this.imagesList[0];
+    this.actualPosition = 0;
 }
 
   ngOnInit(): void {
   }
 
-  handleListClick(target: number) {
-    this.selectedImage = this.galleryService.getByIndex(target)
+  handleListClick(index: number) {
+    this.actualPosition = index;
+    this.selectedImage = this.galleryService.getByIndex(this.actualPosition)
+  }
+
+  handleNavigationClick(index: number) {
+    this.actualPosition = index;
+    this.selectedImage = this.galleryService.getByIndex(this.actualPosition)
   }
 }

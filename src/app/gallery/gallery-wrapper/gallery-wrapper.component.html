@@ -1,5 +1,15 @@
 <div class="gallery-wrapper">
-    <app-image-selected [actualImage]="selectedImage"></app-image-selected>
-    <app-image-list [images]="imagesList" (handleClick)="handleListClick($event)"></app-image-list>
-    <app-gallery-actions></app-gallery-actions>
+    <app-image-selected
+      [actualImage]="selectedImage"
+    ></app-image-selected>
+    <app-image-list
+      [images]="imagesList"
+      [actualIndex]="actualPosition"
+      (listClick)="handleListClick($event)"
+    ></app-image-list>
+    <app-gallery-actions
+      [imagesSize]="imagesList.length"
+      [actualIndex]="actualPosition"
+      (navigateClick)="handleNavigationClick($event)"
+    ></app-gallery-actions>
 </div>
