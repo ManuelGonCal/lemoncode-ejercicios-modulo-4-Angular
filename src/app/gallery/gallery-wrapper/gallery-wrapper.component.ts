@@ -12,12 +12,14 @@ export class GalleryWrapperComponent implements OnInit {
   selectedImage: galleryImageEntity;
   actualPosition: number;
   actualZoom: number;
+  imagesIntervalId: number;
 
   constructor(private galleryService: GalleryService) {
     this.imagesList = [...this.galleryService.getImages()];
     this.selectedImage = this.imagesList[0];
     this.actualPosition = 0;
     this.actualZoom = 75;
+    this.imagesIntervalId = 0;
   }
 
   ngOnInit(): void {}
@@ -37,5 +39,24 @@ export class GalleryWrapperComponent implements OnInit {
 
     if (this.actualZoom > 100) this.actualZoom = 100;
     if (this.actualZoom < 0) this.actualZoom = 0;
+  }
+
+  loopImages() {
+    if (this.actualPosition + 1 >= this.imagesList.length) {
+      this.actualPosition = 0;
+    } else {
+      this.actualPosition = this.actualPosition + 1;
+    }
+    this.selectedImage = this.galleryService.getByIndex(this.actualPosition);
+  }
+
+  handlePlayClick(isPlaying: boolean) {
+    if (isPlaying) {
+      this.imagesIntervalId = window.setInterval(() => {
+        this.loopImages();
+      }, 2000);
+    } else {
+      window.clearInterval(this.imagesIntervalId);
+    }
   }
 }

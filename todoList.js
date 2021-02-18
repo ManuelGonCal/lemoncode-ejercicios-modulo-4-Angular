@@ -1,9 +1,8 @@
 // TODO LIST
-  // ! ESTAMOS CON EL CLICK en la lista movida chunga, mirate lo del index en el ngFor que es con lo que no estamos dando
-  // ? Enviar el indice actual
+// ! ESTAMOS CON EL CLICK en la lista movida chunga, mirate lo del index en el ngFor que es con lo que no estamos dando
+// ? Enviar el indice actual
 
-
-  /* Galeria
+/* Galeria
 
   En este ejercicio se practica:
 
@@ -43,8 +42,8 @@ Programa la galería, las funcionalidades son las siguientes:
 // ? Se pondrá “disabled” el botón siguiente cuando la imagen seleccionada sea la última de la lista.
 // ? Al hacer click en el botón anterior, se cambiará la imagen seleccionada por la anterior de la lista.
 // ? Se pondrá “disabled” el botón anterior cuando la imagen seleccionada sea la primera de la lista.
-Al hacer click en el botón Aumentar, se agrandará el tamaño de la imagen seleccionada.
-Al hacer click en el botón Disminuir, se reducirá el tamaño de la imagen seleccionada.
+// ? Al hacer click en el botón Aumentar, se agrandará el tamaño de la imagen seleccionada.
+// ? Al hacer click en el botón Disminuir, se reducirá el tamaño de la imagen seleccionada.
 Al hacer click en el botón Play, se “pondrá en marcha el reproductor”, es decir, la imagen seleccionada empezará a cambiar cada 2 segundos. Cuando el reproductor llegue a la última imagen volverá a empezar por la primera.
 Al hacer click en el botón Stop, se detendrá el reproductor, es decir, la imagen seleccionada dejará de cambiar cada 2 segundos.
 El botón de Stop solamente se mostrará cuando esté en marcha el reproductor.

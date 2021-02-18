@@ -18,14 +18,19 @@ export class GalleryActionsComponent implements OnInit {
   @Output()
   zoomClick: EventEmitter<number> = new EventEmitter();
 
+  @Output()
+  playClick: EventEmitter<boolean> = new EventEmitter();
+
   isNextDisabled: boolean;
   isPreviousDisabled: boolean;
+  isPlaying: boolean;
 
   constructor() {
     this.actualIndex = 0;
     this.imagesLength = 0;
     this.isNextDisabled = false;
     this.isPreviousDisabled = true;
+    this.isPlaying = false;
   }
 
   ngOnInit(): void {}
@@ -69,25 +74,31 @@ export class GalleryActionsComponent implements OnInit {
     }
   }
 
-  // * Method that handles the click on Next Button
+  // * Method that emit the click on Next Button Event
   onNextClick(): void {
     this.actualIndex = this.navigate(this.actualIndex, 'next');
     this.navigateClick.emit(this.actualIndex);
   }
 
-  // * Method that handles the click on Prev Button
+  // * Method that emit the click on Prev Button Event
   onPreviousClick(): void {
     this.actualIndex = this.navigate(this.actualIndex, 'prev');
     this.navigateClick.emit(this.actualIndex);
   }
 
-  // * Method that handles the makeBigger Button
+  // * Method that emit the makeBigger Button Event
   onZoomInClick(): void {
     this.zoomClick.emit(5);
   }
 
-  // * Method that handles the makeBigger Button
+  // * Method that emit the makeBigger Button Event
   onZoomOutClick(): void {
     this.zoomClick.emit(-5);
+  }
+
+  // * Method that emit Play/Stop Button Event
+  onPlayClick() {
+    this.isPlaying = !this.isPlaying;
+    this.playClick.emit(this.isPlaying);
   }
 }
