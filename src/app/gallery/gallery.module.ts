@@ -6,29 +6,26 @@ import { ImageListComponent } from './images-list/image-list.component';
 import { GalleryActionsComponent } from './gallery-actions/gallery-actions.component';
 import { ImageSelectedComponent } from './image-selected/image-selected.component';
 import { MatIconModule } from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-
-
+import { MatButtonModule } from '@angular/material/button';
+import { RotateImageDirective } from '../directives/rotate-image.directive';
 
 @NgModule({
   declarations: [
     GalleryPageComponent,
     GalleryWrapperComponent,
     ImageListComponent,
+    RotateImageDirective,
     GalleryActionsComponent,
-    ImageSelectedComponent
+    ImageSelectedComponent,
   ],
-  imports: [
-    CommonModule,
-    MatIconModule,
-    MatButtonModule
-  ],
+  imports: [CommonModule, MatIconModule, MatButtonModule],
   exports: [
     GalleryPageComponent,
     GalleryWrapperComponent,
     ImageListComponent,
     GalleryActionsComponent,
-    ImageSelectedComponent
-  ]
+    ImageSelectedComponent,
+    RotateImageDirective,
+  ],
 })
-export class GalleryModule { }
+export class GalleryModule {}

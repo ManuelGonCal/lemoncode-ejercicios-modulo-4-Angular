@@ -1,6 +1,11 @@
 <ng-container *ngIf="actualImage !== null">
   <h2>{{ actualImage?.title }}</h2>
   <div class="img-container">
-    <img src="{{ actualImage?.src }}" alt="{{ actualImage?.title }}" #img />
+    <img
+      rotate="0"
+      src="{{ actualImage?.src }}"
+      alt="{{ actualImage?.title }}"
+      #img
+    />
   </div>
 </ng-container>
